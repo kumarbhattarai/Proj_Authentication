@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header')  %>
+    <title>Document</title>
+
+</head>
+<body class="bg-black text-white">
+    <form action="/user/forgotpassword" method="post">
+    <div class="m-3">
+        <label for="name" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="name" name="name" required>
+    </div>
+    <div class="m-3">
+        <label for="email" class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" name="email" required>
+    </div>
+    <div  class="m-3">
+    <button type="submit" class="btn btn-primary">proceed</button>
+</div>
+</form>
+    <%- include('./partials/script') %>
+</body>
+</html>

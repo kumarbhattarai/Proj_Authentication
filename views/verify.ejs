@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/header')  %>
+    <title>verify</title>
+</head>
+<body>
+    <form action="/user/verify" method="POST" class="container mt-5">
+        <div>
+            <input type="hidden" name="email" value="<%= locals.email %>">
+        </div>
+            <div class="mb-3">
+            <label for="code" class="form-label">Enter your verificationcode</label>
+            <input type="number" class="form-control" id="code" name="verificationcode" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Verify</button>
+        </div>
+    </form>
+    <%- include('./partials/script') %>
+</body>
+</html>
