@@ -75,7 +75,7 @@ router.post('/forgotpassword',async(req,res)=>{
 router.post('/verify',async(req,res)=>{
 
     const {email,verificationcode}=req.body
-    console.log(email)
+    // console.log(email)
     try{
         const user=await User.findOne({email})
         if(!user){
@@ -85,9 +85,9 @@ router.post('/verify',async(req,res)=>{
         //     return res.status(404).send('User already verified')
         // }
         const verified= await verify(email,verificationcode)
-        console.log(verified)
+        // console.log(verified)
         if(verified===true){
-            console.log('verify')
+            // console.log('verify')
         return res.redirect('/user/login')
         
         }
@@ -151,7 +151,7 @@ router.post('/setpassword',async(req,res)=>{
     }
 })
 router.post('/login',async(req,res)=>{
-    console.log('login')
+    // console.log('login')
      const {email,password}=req.body
     try{
         const user=await User.findOne({email:req.body.email})
@@ -193,7 +193,7 @@ router.get('/forgotpassword',(req,res)=>{
 })
 router.get('/')
 router.get('/logout',(req,res)=>{
-    console.log('logout')
+    // console.log('logout')
     res.clearCookie('token').redirect('/user/login');
 })
 router.get('/login',(req,res)=>{

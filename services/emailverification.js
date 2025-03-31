@@ -1,4 +1,6 @@
 const nodemailer = require("nodemailer");
+const express = require("express");
+require("dotenv").config();
 const User = require("../models/user");
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
@@ -21,10 +23,11 @@ async function sendMail(email,code) {
     text: `your verification code is ${code}`, // plain text body
     html: `<b>This is your verification code ${code} </b>`, // html body
   });
-  console.log("Message sent: %s", info.messageId);
+  // console.log("Message sent: %s", info.messageId);
+  alert("Verification code sent to your email");
 }
 catch(err){
-    console.log(err)  
+    // console.log(err)  
 }
 }
 module.exports={

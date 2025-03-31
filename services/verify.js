@@ -11,11 +11,11 @@ if (user.verificationcode === code) {
         { email },
         { $set: { isverified: true, verificationcode: null } }
     );
-    console.log('User verified');
+    // console.log('User verified');
     return true; 
 }
 else{
-    console.log('Incorrect verification code');
+    // console.log('Incorrect verification code');
     return false;
 }
 }

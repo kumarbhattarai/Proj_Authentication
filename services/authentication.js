@@ -1,5 +1,6 @@
 const jwt=require('jsonwebtoken');
-const secret= process.env.SECRET
+ require('dotenv').config()
+const secret= process.env.SECRET_KEY
 // const User = require('../models/user')
 function generateToken(User){
 
@@ -11,8 +12,8 @@ const payload={
 }
 
 const token=jwt.sign(payload,secret,{expiresIn:'10d'})
+// console.log(token)
 return token;
-console.log(token)
 }
 function verifyToken(token){
     if(!token){

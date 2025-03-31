@@ -7,9 +7,8 @@ const { checkforToken } = require('./middleware/authentication')
 require('dotenv').config()
 const PORT=3000;
 const app=express();
-
-
-connection ("mongodb://localhost:27017/authentication")
+URI=process.env.MONGODB
+connection (URI)
 app.use(cookieParser())
 app.use(checkforToken('token'))
 app.set('view engine','ejs');

@@ -41,7 +41,7 @@ const hash = createHmac('sha256', salt)
                .digest('hex');
 this.salt = salt;  
 this.password = hash;
-console.log(hash);
+// console.log(hash);
 next();
 
 })
